@@ -5,6 +5,7 @@ import { OrderManageRoutingModule } from './order-manage-routing.module';
 import { CreateComponent } from './create/create.component';
 import { ViewComponent } from './view/view.component';
 import { OrderManageService } from './order-manage.service';
+import { TotalPricePipe } from './total-price.pipe';
 
 
 
@@ -15,7 +16,7 @@ import { OrderManageService } from './order-manage.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [CreateComponent, ViewComponent],
+  declarations: [CreateComponent, ViewComponent, TotalPricePipe],
   providers: [OrderManageService]
 })
 export class OrderManageModule { }

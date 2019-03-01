@@ -15,39 +15,24 @@
     <tbody>
 
       <tr *ngFor="let order of orders">
+        <td>{{order.id}}</td>
+        <td>{{order.name}}</td>
+        <td>{{order.itemname}}</td>
+        <td>{{order.qty}}</td>
+        <td>{{order.price}}</td>
+        <td>{{order.price * order.qty}}</td>
+        <td>{{order.orderdate | date:'dd/MM/yyyy'}}</td>
         <td>
-          {{order.id}}
-        </td>
-        <td>
-
-          {{order.name}}
-
-
-
-        </td>
-        <td>
-
-          {{order.itemname}}
-
-        </td>
-        <td>
-          {{order.qty}}
-        </td>
-        <td>
-          {{order.price}}
-        </td>
-        <td></td>
-        <td>
-          {{order.orderdate | date:'dd/MM/yyyy'}}
-        </td>
-
-        <td>
-          <button class="btn btn-primary" (click)="updateOrderData(order)">
+          <button class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Update" (click)="updateOrderData(order)">
             <i class="far fa-edit"></i>
           </button>
-          <button class="btn btn-danger" (click)="deleteOrder(order.id)">
+          <button class="btn btn-danger" data-toggle="tooltip" data-placement="right" title="Delete" (click)="deleteOrder(order.id)">
             <i class="far fa-trash-alt"></i>
           </button>
+          <button class="btn btn-success" data-toggle="tooltip" data-placement="right" title="Print">
+            <i class="fas fa-print"></i>
+          </button>
+          <app-create></app-create>
         </td>
       </tr>
 
@@ -58,14 +43,13 @@
 
 <div class="container" style="margin:30px">
   <form name="form" [formGroup]="orderForm" (ngSubmit)="orderForm.valid && order()">
-    <span *ngIf="showId">
+    <span *ngIf="updateButton">
       <div class="form-group">
-          <label for="name">Id</label>
-          <input type="text" readonly="true" class="form-control" formControlName="id"  />
-      
-        </div>
-      </span>
-    
+        <label for="name">Id</label>
+        <input type="text" readonly="true" class="form-control" formControlName="id" />
+      </div>
+    </span>
+
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" formControlName="name" [ngClass]="{'is-invalid':orderForm.get('name').touched && orderForm.get('name').invalid}" />
@@ -76,10 +60,10 @@
 
     <div class="form-group">
       <label for="name">Item Name</label>
-      <input type="text" class="form-control" formControlName="itemname" [ngClass]="{'is-invalid':orderForm.get('itemname').touched && orderForm.get('itemname').invalid}" />
-      <div *ngIf="orderForm.get('itemname').touched && orderForm.get('itemname').invalid" class="invalid-feedback">
-        <div *ngIf="orderForm.get('itemname').errors.required"> Item Name is required</div>
-      </div>
+      <select id="itemname" class="form-control" formControlName="itemname">
+        <option *ngFor="let itemname of ['Dell Laptop', 'HP Laptop', 'Samsung Laptop', 'Asus Laptop', 'Accer Laptop']"
+          [ngValue]="itemname">{{itemname}}</option>
+      </select>
     </div>
 
 
@@ -107,10 +91,16 @@
       </div>
     </div>
 
-
-
-    <div class="form-group">
-      <button class="btn btn-primary" [disabled]="!orderForm.valid">{{buttontxt}}</button>
-    </div>
+    <span *ngIf="createButton">
+      <div class="form-group">
+        <button class="btn btn-primary" [disabled]="!orderForm.valid">{{buttontxt}}</button>
+      </div>
+    </span>
+    <span *ngIf="updateButton">
+      <div class="form-group">
+        <button class="btn btn-primary" [disabled]="!orderForm.valid">{{buttontxt}}</button>
+      </div>
+    </span>
   </form>
 </div>
+

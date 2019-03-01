@@ -20,7 +20,8 @@ export class ViewComponent implements OnInit {
   orderForm: FormGroup;
   orders: string[] = [];
   updateOrder: Order;
-  showId: boolean;
+  updateButton: boolean;
+  createButton: boolean;
   buttontxt = 'Make Order';
   /**
    * Creates an instance of view component.
@@ -39,6 +40,7 @@ export class ViewComponent implements OnInit {
       orderdate: ['', Validators.compose([Validators.required])],
 
     });
+    this.createButton = true;
     this.getAllOrder();
 
   }
@@ -78,10 +80,11 @@ export class ViewComponent implements OnInit {
    * Updates order data
    * @param order set the all data into the form
    */
-  updateOrderData(order) {
+  updateOrderData(order: Order) {
     this.buttontxt = 'Update Order';
     this.updateOrder = order;
-    this.showId = true;
+    this.updateButton = true;
+    this.createButton = false;
     this.orderForm.controls['id'].setValue(this.updateOrder.id);
     this.orderForm.controls['name'].setValue(this.updateOrder.name);
     this.orderForm.controls['itemname'].setValue(this.updateOrder.itemname);
@@ -90,6 +93,7 @@ export class ViewComponent implements OnInit {
     this.orderForm.controls['orderdate'].setValue(this.updateOrder.orderdate);
 
   }
+
   /**
    * Delete perticular order
    * @param orderId set the order id for delete
@@ -100,7 +104,4 @@ export class ViewComponent implements OnInit {
       this.routes.navigate(['/order/view']);
     });
   }
-
-
-
 }

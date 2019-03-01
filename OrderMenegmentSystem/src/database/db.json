@@ -4,33 +4,17 @@
       "id": 1,
       "name": "Rayhan",
       "itemname": "HP Laptop",
-      "price": 35000,
-      "qty": 1,
-      "orderdate": "2019-02-27"
+      "price": "29570",
+      "qty": "1",
+      "orderdate": "2019-03-01"
     },
     {
+      "id": 2,
       "name": "Naim",
       "itemname": "Dell Laptop",
-      "price": "28790",
+      "price": "34580",
       "qty": "1",
-      "orderdate": "2019-02-28",
-      "id": 2
-    },
-    {
-      "id": 3,
-      "name": "Mayur",
-      "itemname": "Dell",
-      "price": "32500",
-      "qty": "1",
-      "orderdate": "2019-02-28"
-    },
-    {
-      "id": 4,
-      "name": "Gaurang",
-      "itemname": "HP Laptop",
-      "price": "48000",
-      "qty": "1",
-      "orderdate": "2019-02-28"
+      "orderdate": "2019-03-01"
     }
   ]
 }

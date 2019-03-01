@@ -32,14 +32,14 @@ export class OrderManageService {
    * Updates exsiting order
    * @param oreder it set the id for update order
    */
-  public updateOrder(oreder: { id: number, name: string, itemname: string, price: number, qty: number, dob: Date }):
+  public updateOrder(oreder: Order):
     Observable<Order> {
     return this.httpClient.put<Order>(`${this.serviceUrl + 'orderdetails'}/${oreder.id}`, oreder);
   }
 
 
   /**
-   * Deletes a perticular order using the order id
+   * Delete a perticular order using the order id
    * @param orderId it set the id for delete order
    */
   public deleteOrder(orderId: number): Observable<Order> {
