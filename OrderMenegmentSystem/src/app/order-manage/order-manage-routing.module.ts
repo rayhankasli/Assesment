@@ -6,7 +6,7 @@ import { ViewComponent } from './view/view.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'employeedetails',
+    redirectTo: 'view',
     pathMatch: 'full'
   },
   {
