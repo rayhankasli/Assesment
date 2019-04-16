@@ -1,0 +1,15 @@
+<div class="card-group">
+  <div *ngFor="let cdata of convertData">
+    <div class="card m-1" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">{{cdata.bankName}}</h5>
+        <p class="card-text">Base Currency : {{cdata.baseCurrency}}</p>
+        <p class="card-text"> Amount : {{cdata.ammount}}</p>
+        <p class="card-text"> Target Currency : {{cdata.targetCurrency}}</p>
+        <p class="card-text"> Currency Rate : {{cdata.currencyRate |  number:'1.2-2'}}</p>
+        <p class="card-text"> Total : {{cdata.total |  number:'1.2-2'}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

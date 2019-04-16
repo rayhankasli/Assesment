@@ -1,0 +1,67 @@
+{
+  "currencyconverter": [
+    {
+      "bankName": "SBI",
+      "baseCurrency": "INR",
+      "ammount": "50",
+      "targetCurrency": "TRY",
+      "id": 1
+    },
+    {
+      "bankName": "PNB",
+      "baseCurrency": "INR",
+      "ammount": "50",
+      "targetCurrency": "USD",
+      "id": 2
+    },
+    {
+      "bankName": "HDFC",
+      "baseCurrency": "INR",
+      "ammount": "2",
+      "targetCurrency": "USD",
+      "id": 3
+    },
+    {
+      "bankName": "Axis Bank",
+      "baseCurrency": "INR",
+      "ammount": "20",
+      "targetCurrency": "USD",
+      "id": 4
+    },
+    {
+      "bankName": "PNB",
+      "baseCurrency": "INR",
+      "ammount": "10000",
+      "targetCurrency": "TRY",
+      "id": 5
+    },
+    {
+      "bankName": "Dena Bank",
+      "baseCurrency": "INR",
+      "ammount": "25",
+      "targetCurrency": "USD",
+      "id": 6
+    },
+    {
+      "id": 7,
+      "bankName": "Bank of India",
+      "baseCurrency": "INR",
+      "ammount": "20",
+      "targetCurrency": "EUR"
+    },
+    {
+      "id": 8,
+      "bankName": "ICICI Bank",
+      "baseCurrency": "INR",
+      "ammount": "300",
+      "targetCurrency": "AUD"
+    },
+    {
+      "id": 9,
+      "bankName": "Bank of Baroda",
+      "baseCurrency": "INR",
+      "ammount": "250",
+      "targetCurrency": "TRY"
+    }
+  ]
+}
